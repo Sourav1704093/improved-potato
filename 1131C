@@ -1,0 +1,40 @@
+//try to solve yourself first
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); 
+
+    int n;
+    cin>>n;
+    int ara[n];
+    int bra[n];
+    for(int i = 1; i<= n; i++)
+    {
+        cin>>ara[i];
+    }
+    sort(ara+1,ara+n+1);
+    int p_in = 0;
+    for(int i = 1; i <= n; i++)
+    {
+        //int p_in  = 0;
+        if(i % 2 == 1)
+        {
+            p_in  = p_in +1 ;
+            bra[p_in] = ara[i];
+        }
+        else
+        {
+            bra[n - p_in +1] = ara[i];
+        }
+        
+    }
+    for(int i = 1; i <= n; i++)
+    {
+        cout<<bra[i]<<" ";
+    }
+
+    return 0;
+}
